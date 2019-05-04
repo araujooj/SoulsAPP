@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "188076329001",
+    "firebase_url": "https://souls-marketplace.firebaseio.com",
+    "project_id": "souls-marketplace",
+    "storage_bucket": "souls-marketplace.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188076329001:android:e200fdfec57f695f",
+        "android_client_info": {
+          "package_name": "com.souls"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188076329001-idrljf8bsoq90tpghq5nvi7vsdkn32dd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5XCLkq7nilgFCCrJfXs_McB2resC8Zkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188076329001-idrljf8bsoq90tpghq5nvi7vsdkn32dd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "188076329001-g0hg7sn8ep679gntq1e2ppsuje6ncd4d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.souls.firebase"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
