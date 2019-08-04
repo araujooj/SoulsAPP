@@ -1,135 +1,114 @@
-import React, { Component } from 'react'
-import { Text, StyleSheet, View, TextInput, Image, TouchableOpacity } from 'react-native'
+import React, { Component } from "react";
+import { StyleSheet, View, Text, Image, TouchableOpacity ,ImageBackground} from "react-native";
 
-export default class Main extends Component {
-    render() {
-        return (
+import { Actions } from "react-native-router-flux";
 
-            <View style={styles.container}>
-                <TextInput
-                    style={styles.searchBar}
-                    placeholderTextColor="#fff"
-                    selectionColor="#fff"
-                    placeholder='Pesquisar Produtos / Atacados, Lojistas...' />
-
-                <View style={styles.top}>
-
-                    <TouchableOpacity style={styles.circle}>
-                        <View style={styles.circle}>
-                            <Text style={{ color: '#fff', alignSelf: 'center' }}>Vestuário</Text>
-                            <Image source={require('./vestuario.jpg')} style={styles.circle}></Image>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.circle}>
-                        <View style={styles.circle}>
-                            <Text style={{ color: '#fff', alignSelf: 'center' }}>Alimentos</Text>
-                            <Image source={require('./alimentos.jpg')} style={styles.circle}></Image>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.circle}>
-                        <View style={styles.circle}>
-                            <Text style={{ color: '#fff', alignSelf: 'center' }}>Peças</Text>
-                            <Image source={require('./peças.jpg')} style={styles.circle}></Image>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.circle}>
-                        <View style={styles.circle}>
-                            <Text style={{ color: '#fff', alignSelf: 'center' }}>Pesca</Text>
-                            <Image source={require('./pesca.jpg')} style={styles.circle}></Image>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.circle}>
-                        <View style={styles.circle}>
-                            <Text style={{ color: '#fff', alignSelf: 'center' }}>Utilidades</Text>
-                            <Image source={require('./utilidades.jpg')} style={styles.circle}></Image>
-                        </View>
-                    </TouchableOpacity>
-
-                </View>
-                <View style={styles.market}>
-                    <TouchableOpacity style={{ color: 'rgba(0,0,0, .2)' }}>
-                        <View style={styles.market1}>
-                            <Image source={require('./stop.jpg')} style={styles.image1}></Image>
-                            <Text style={{ color: '#fff', fontSize: 18, marginLeft: '4%' }}>Canhoto Atacado - Alimentos</Text>
-                        </View>
-
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.market2}>
-                            <Image source={require('./pesca.jpg')} style={styles.image1}></Image>
-                            <Text style={{ color: '#fff', fontSize: 18, marginLeft: '4%' }}>Marujo Atacado e Varejo - Pesca</Text>
-                        </View>
-                    </TouchableOpacity>
-
-                    <View style={styles.market3}>
-
-                    </View>
-
-                </View>
-            </View>
-
-
-        )
-    }
-}
-
+const Tutorial2 = () => {
+  return (
+    <ImageBackground source={require("./11.png")} style={styles.container}>
+      <View style={styles.overlayContainer}>
+        <View style={styles.whiteContainer}>
+          <View style={styles.circle}>
+            <Image source={require("./grupo.png")} style={styles.header} />
+          </View>
+          <Text style={styles.title}>Sua próxima missão</Text>
+          <Text style={styles.upoint}>Recompensa: 7 UPoints</Text>
+          <View style={styles.contentView}>
+            <Text style={styles.contentText}>
+              Junte-se a um grupo de pessoas e comece a se exercitar
+            </Text>
+          </View>
+          <TouchableOpacity onPress={Actions.Grupo()}>
+            <Image source={require("./ok.png")} style={styles.header} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </ImageBackground>
+  );
+};
 const styles = StyleSheet.create({
-    searchBar: {
-        width: '94%',
-        backgroundColor: 'rgba(0,0,8, .9)',
-        borderRadius: 45,
-        paddingHorizontal: 4,
-        opacity: 0.4,
-        textAlign: 'justify',
-        padding: 6,
-        color: '#fff',
-        marginTop: '2%',
-        marginLeft: '2%'
-    },
-    container: {
-        flex: 1,
-        width: '100%',
-        height: '100%',
-        backgroundColor: '#27343e',
-    },
-    top: {
-        height: '20%',
-        flexDirection: 'row',
-        alignItems: 'center',
-        textAlign: 'center',
-        margin: '3%',
-        marginTop: '1%'
-    },
-    circle: {
-        width: 65,
-        height: 65,
-        borderRadius: 100,
-        marginTop: '3%'
-    },
-    header: {
-        width: '30%',
-        height: '30%',
-        borderRadius: 100,
-        borderColor: '#fff',
-        borderWidth: 1,
-    },
-    market: {
-        margin: '4%',
-    },
-    image1: {
-        width: 100,
-        height: 100
-    },
-    market1: {
-        flexDirection: 'row'
-    },
-    market2: {
-        marginTop: '5%',
-        flexDirection: 'row'
-    }
-
-})
+  container: {
+    flex: 1,
+    width: "100%",
+    height: "100%"
+  },
+  overlayContainer: {
+    flex: 1
+  },
+  whiteContainer: {
+    width: "70%",
+    height: "65%",
+    marginLeft: "15%",
+    marginTop: "15%",
+    borderWidth: 2,
+    borderColor: "#fff",
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "space-between"
+  },
+  circle: {
+    width: 120,
+    height: 120,
+    borderRadius: 100,
+    backgroundColor: "rgba(0,0,0, .1)",
+    marginTop: "10%"
+  },
+  header: {
+    width: 120,
+    height: 120,
+    marginTop: "3%",
+    marginLeft: "2%"
+  },
+  title: {
+    fontSize: 25,
+    color: "rgba(0,0,0, .9)"
+  },
+  contentView: {
+    height: "5%",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "10%"
+  },
+  contentText: {
+    fontSize: 20,
+    color: "rgba(0,0,0, .8)",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    margin: 15,
+    marginTop: '5%'
+  },
+  upoint:{
+       fontSize: 20,
+    color: "rgba(0,0,0, .8)",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    margin: 15,
+    marginTop: '5%',
+    fontWeight: 'bold'
+  },
+  buttonContainer: {
+    borderColor: "#fff",
+    borderWidth: 2,
+    width: "70%",
+    alignItems: "center",
+    justifyContent: "space-between"
+  },
+  loginbtn: {
+    alignSelf: "center",
+    width: "83%",
+    height: 35,
+    padding: 5,
+    backgroundColor: "#00995d",
+    borderRadius: 45,
+    marginTop: "10%",
+    textAlign: "center"
+  },
+  buttonText: {
+    fontSize: 16,
+    alignSelf: "center",
+    color: "#fff"
+  }
+});
+export default Tutorial2;

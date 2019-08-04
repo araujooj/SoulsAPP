@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import {
   Text,
   StyleSheet,
@@ -7,23 +7,24 @@ import {
   TouchableOpacity,
   Image,
   TextInput
-} from 'react-native'
+} from "react-native";
 
-import { Actions } from 'react-native-router-flux'
-import firebase from 'react-native-firebase'
+import { Actions } from "react-native-router-flux";
+import firebase from "react-native-firebase";
 
-export default class Login extends Component {
+export default class Cadastro extends Component {
   state = {
     email: "",
     password: "",
     isAuthenticated: false
   };
-  login = async () => {
+  register = async () => {
     const { email, password } = this.state;
     try {
       const user = await firebase
         .auth()
-        .signInWithEmailAndPassword(email, password);
+        .createUserWithEmailAndPassword(email, password);
+        
       this.setState({
         isAuthenticated: true
       });
@@ -35,16 +36,10 @@ export default class Login extends Component {
 
   render() {
     return (
-      <ImageBackground
-        source={require("./11.png")}
-        style={styles.container}
-      >
+      <ImageBackground source={require("./11.png")} style={styles.container}>
         <View style={styles.overlayContainer}>
           <View style={styles.top}>
-            <Image
-              source={require("./logo.png")}
-              style={styles.imageHeader}
-            />
+            <Image source={require("./logo.png")} style={styles.imageHeader} />
           </View>
           <View style={styles.formularios}>
             <TextInput
@@ -56,10 +51,7 @@ export default class Login extends Component {
               autoCorrect={false}
               placeholderTextColor="#fff"
               selectionColor="#fff"
-              style={[
-                styles.codeHighlightContainer,
-                styles.homeScreenFilename
-              ]}
+              style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
             />
             <TextInput
               placeholder="Senha"
@@ -70,23 +62,14 @@ export default class Login extends Component {
               placeholderTextColor="#fff"
               selectionColor="#fff"
               autoCorrect={false}
-              style={[
-                styles.codeHighlightContainer,
-                styles.homeScreenFilename
-              ]}
+              style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
             />
             <View style={styles.loginbtn}>
-              <TouchableOpacity style={styles.botao} onPress={this.login}>
-                <Text style={styles.buttonText}>Login</Text>
+              <TouchableOpacity style={styles.botao} onPress={this.register}>
+                <Text style={styles.buttonText}>Cadastrar</Text>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity onPress={() => Actions.Cadastro()}>
-              <Text style={styles.btnSignUp}>Cadastre-se</Text>
-            </TouchableOpacity>
           </View>
-
-            <Text style={styles.btnForget}>Esqueceu a senha?</Text>
-  
         </View>
       </ImageBackground>
     );
@@ -135,7 +118,7 @@ const styles = StyleSheet.create({
     padding: 5,
     backgroundColor: "#00995d",
     borderRadius: 45,
-    marginTop: "10%",
+    marginTop: "15%",
     textAlign: "center"
   },
   buttonText: {
